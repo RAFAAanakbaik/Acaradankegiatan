@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita Event dan Acara Moklet Malang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-red-600 text-white p-4 text-center text-xl font-bold relative">
+    <img src="https://i.pinimg.com/originals/ba/1b/ba/ba1bba7912812cba682517ac0c8fae86.png" alt="Logo" class="absolute top-2 left-2 w-12 h-12 rounded-full">
+    Event dan Acara Moklet Malang
+  </header>
+
+  <!-- Main Content -->
+  <div class="flex flex-col md:flex-row p-4 gap-4">
+    <!-- Video Section -->
+    <div class="flex-1 bg-black rounded-lg overflow-hidden" id="video-section">
+      <iframe class="w-full h-[500px] md:h-[600px]" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Button List -->
+    <div class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow">
+      <button class="prestasi-btn w-full mb-2 p-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition duration-300" onclick="changeVideo('https://www.youtube.com/embed/UwVau7nlWGs?si=MZbkBgObp2ai1n5t', this)">PODCAST FOMO</button>
+      <button class="prestasi-btn w-full mb-2 p-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition duration-300" onclick="changeVideo('https://www.youtube.com/embed/G7Bb_OHa9OU?si=E1dbyae4i1YEk7vw', this)">UPACARA KEMERDEKAAN KE 79</button>
+      <button class="prestasi-btn w-full mb-2 p-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition duration-300" onclick="changeVideo('https://www.youtube.com/embed/ADvYAWEHgQc?si=Ihksw63gXm5K2vUq', this)">Java Fundamental part 1</button>
+      <button class="prestasi-btn w-full mb-2 p-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition duration-300" onclick="changeVideo('https://www.youtube.com/embed/fQS3070nbqQ?si=ydvMF90GNrXxTqeL', this)">Java Fundamental part 2</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-red-600 text-white p-2">
+    <marquee behavior="scroll" direction="left">Selamat Datang di Website  Moklet Malang! 🔥 di web ini Anda dapat melihat event dan acara di MOKLET MALANG</marquee>
+  </footer>
+
+  <script>
+    function changeColor(button) {
+      document.querySelectorAll('.prestasi-btn').forEach(btn => {
+        btn.classList.remove('bg-red-600', 'text-white');
+        btn.classList.add('bg-gray-200', 'hover:bg-gray-300');
+      });
+      button.classList.add('bg-red-600', 'text-white');
+      button.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+    }
+    
+    function changeVideo(videoUrl, button) {
+      document.getElementById('video-section').innerHTML = `<iframe class="w-full h-[500px] md:h-[600px]" src="${videoUrl}" frameborder="0" allowfullscreen></iframe>`;
+      changeColor(button);
+    }
+  </script>
+</body>
+</html>
