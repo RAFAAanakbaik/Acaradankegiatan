@@ -1,0 +1,35 @@
+.slider {
+  position: relative;
+}
+
+.slides {
+  transition: transform 0.5s ease-in-out;
+}
+
+.main-content {
+  padding-top: 4rem; /* Menyesuaikan padding atas untuk menghindari overlap dengan navbar */
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .slider {
+    height: 200px;
+  }
+
+  .slide h2 {
+    font-size: 1.25rem;
+  }
+
+  .slide p {
+    font-size: 0.875rem;
+  }
+
+  .game-accounts {
+    justify-content: center;
+  }
+}
